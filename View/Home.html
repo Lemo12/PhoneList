@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html ng-app="Contact_List">
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Book</title>
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        #search {
+            width: 700px;
+            padding: 10px;
+            border: 1px solid #0094ff;
+        }
+        #Submit {
+            padding: 7px;
+            background: blue;
+            border: 1px solid #0094ff;
+            color: white;
+            margin-right: -5px;
+        }
+       #Submit:hover {
+          background: #808080;
+          transition: all 0.45s;
+       }
+    </style>
+</head>
+<body ng-controller="HomeController">
+    <div class="jumbotron text-center">
+        <h1>Phone Book</h1>
+    </div>
+    <input type="text" name="search" placeholder="Search.." ng-model="searchProp">
+    <div class="row">
+        <form>
+            <table class="table table-hover general-table" cellspacing="40" align="center"  style="width:80%">
+                <thead class="grid-top panel">
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="contact in PhoneBooks | Filter: searchProp">
+                        <td>{{contact.Firstname}}</td>
+                        <td>{{contact.Phone_No}}</td>
+                        <td>{{contact.Email}}</td>
+                        <td>
+                            <a href="#!EditDetails" ng-click="edit">edit</a>  
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div ng-view>
+    </div>
+</body>
+</html>

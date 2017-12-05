@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Contact_BookModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PhoneBook">
+    <Key>
+      <PropertyRef Name="Contact_Id" />
+    </Key>
+    <Property Name="Contact_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="30" />
+    <Property Name="LastName" Type="nchar" MaxLength="10" />
+    <Property Name="Phone_No" Type="nchar" MaxLength="12" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="Contact_BookModelStoreContainer">
+    <EntitySet Name="PhoneBook" EntityType="Self.PhoneBook" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

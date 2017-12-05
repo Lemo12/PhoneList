@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html ng-app="Contact_List">
+<head>
+    <meta charset="utf-8" />
+    <title>Add Contact</title>
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+    <script src="../Scripts/jquery-1.10.2.js"></script>
+    <script src="../Scripts/bootstrap.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Services.js"></script>
+    <script src="../Demo.js"></script>
+</head>
+<body ng-controller="EnterController">
+    <div class="text-center">
+        <h1>Add Contact</h1>
+    </div>
+   <div class="container">
+       <form>
+           <div class="form-group">
+               <label for="inputName">First Name</label>
+               <input type="text" ng-model="Firstname" class="form-control input-lg" placeholder="Firstname" required />
+           </div>
+           <div class="form-group">
+               <label for="inputName">Last Name</label>
+               <input type="text" ng-model="Lastname" class="form-control input-lg" placeholder="Lastname" required />
+           </div>
+           <div class="form-group">
+               <label for="inputName">Contact</label>
+               <input type="tel" ng-model="Phone_No" class="form-control input-lg" placeholder="Contact" required />
+           </div>
+           <div class="form-group">
+               <label for="inputName">Email</label>
+               <input type="Email" ng-model="Email" class="form-control input-lg" placeholder="Email" required />
+           </div>
+           <div class="input">
+               <button ng-click="AddContact()" class="btn btn-info form-control input-lg">Add Contact</button>
+           </div>
+       </form>
+   </div>
+    <div ng-view>
+    </div>
+</body>
+</html>
